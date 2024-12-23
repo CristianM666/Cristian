@@ -2,19 +2,19 @@
 <html ng-app='ShoppingListApp'>
 <head>
     <meta charset="UTF-8">
-    <script src="prueba1.js"></script>
+    <script src="Buscar.js"></script>
+    <script src="angular.min.js"></script>
     <title>Filter Array Example
     </title>
 </head>
 <body>
     <h1>ng-repeat </h1>
     <div ng-controller='ShoppingListController'>
-<h3>Filter Array Example</h3>
-
-
-    </div>  
+<h3>Lista de compras</h3>
+    <ul>    
+        <li ng-repeat ="item in ShoppingList1">{{item}}</li></li>
+    </ul>    
+</div>  
 </body>
 </html> 
-
-
 

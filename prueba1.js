@@ -1,26 +1,22 @@
-var student = {
-    name: "",
-    type: "student"
-};
+var numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log("Matrix de numeros:", numberArray);
 
-document.addEventListener('DOMContentLoaded', contentLoaded);
+function above5Filter(value) {
+    return value > 5;
+}
+var FiltroMatrixNumeros = numberArray.filter(above5Filter);
+console.log("Matriz de números filtrados: ", FiltroMatrixNumeros);
 
-function contentLoaded(event) {
-    document.getElementById('name').addEventListener("keyup", keyUp);
+var ListaCompras = [
+    "Leche", "Donas", "Galletas", "Chocolate", "Peanut Butter", "Pepto Bismol", 
+    "Pepto Bismol (Chocolate flavor)", "Pepto Bismol (Cookie flavor)"
+];
+console.log("Lista de Compras: ", ListaCompras);
+
+var valorbúsqueda = "Bismol";
+function containFilter(value) {
+    return value.indexOf(valorbúsqueda) !== -1;
 }
 
-function keyUp(event) {
-    calculateNumericOutput();
-} 
-
-function calculateNumericOutput() {
-    student.name =document.getElementById('name').Value;
-
-    var totalNameValue = 0;
-    for (var i = 0; i < student.name.length; i++) {
-        totalNameValue += student.name.charCodeAt(i);
-    }
-
-    var output = "Total numero del valor del nombre" + totalNameValue;
-    document.getElementById('output').innerText = output;
-}
+var BusquedaListaCompras = ListaCompras.filter(containFilter);
+console.log("Lista de compras buscada: ", BusquedaListaCompras);
