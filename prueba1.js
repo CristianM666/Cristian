@@ -1,22 +1,21 @@
-var numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-console.log("Matrix de numeros:", numberArray);
+(function(){
+'use strict';
 
-function above5Filter(value) {
-    return value > 5;
+angular.module('Controlador', [])
+.controller('ParentController1', ParentController1)
+.controller('ChildController1', ChildController1)
+.controller('ParentController2', ParentController2)
+.controller('ChildController2', ChildController2);
+
+ParentController1.$inject = ['$scope'];
+function ParentController1($scope) {
+    $scope.parentValue = 1;
+    $scope.pc = this;
+    $scope.pc.parentValue = 1;
 }
-var FiltroMatrixNumeros = numberArray.filter(above5Filter);
-console.log("Matriz de números filtrados: ", FiltroMatrixNumeros);
-
-var ListaCompras = [
-    "Leche", "Donas", "Galletas", "Chocolate", "Peanut Butter", "Pepto Bismol", 
-    "Pepto Bismol (Chocolate flavor)", "Pepto Bismol (Cookie flavor)"
-];
-console.log("Lista de Compras: ", ListaCompras);
-
-var valorbúsqueda = "Bismol";
-function containFilter(value) {
-    return value.indexOf(valorbúsqueda) !== -1;
+ChildController1.$inject = ['$scope'];
+function ChildController1($scope) {
+    console.log("$scope.parentValue: ", $scope.parentValue);
+    console.log("CHILD $scope: ", $scope);
 }
-
-var BusquedaListaCompras = ListaCompras.filter(containFilter);
-console.log("Lista de compras buscada: ", BusquedaListaCompras);
+});

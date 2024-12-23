@@ -20,7 +20,6 @@ var ShoppingList2 = [
         quantity: "300"
     },
     {
-        
         name: "Chocolate",
         quantity: "5"
     }
